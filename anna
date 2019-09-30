@@ -1,0 +1,40 @@
+// var ballX      = [30, 50, 120, 300, 370];
+// var ballXSpeed = [3, 5, 10, 1, 21];
+
+var ballX = []
+var ballXSpeed = []
+
+function setup() {
+  createCanvas(400, 400);
+
+  for (var i = 0; i < 10; i++) {
+    ballX.push(10);
+    ballXSpeed.push(3);
+  }
+  print(ballX);
+}
+
+
+
+
+function draw() {
+  background(220);
+
+  fill(255, 0, 0);
+
+  for (var i = 0; i < 100; i++) {
+
+    ellipse(ballX[i], 100, 30);
+
+    ballX[i] = ballX[i] + ballXSpeed[i];
+
+    if (ballX[i] >= 400) {
+      ballXSpeed[i] *= -1;
+    }
+
+    if (ballX[i] <= 0) {
+      ballXSpeed[i] *= -1;
+    }
+
+  }
+}
